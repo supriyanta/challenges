@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Manjari", sans-serif;
+}
+
+.container {
+	margin: 0 170px;
+}
+
+#top {
+	text-align: center;
+	margin: 45px 0 30px 0;
+	font-family: "Manjari", sans-serif;
+}
+
+#top :nth-child(1) {
+	font-size: 2.6rem;
+}
+
+#top :nth-child(2) {
+	margin: 16px 0;
+	font-size: 1.6rem;
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	background: rgb(7, 163, 224);
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+button:hover {
+	background: rgb(25, 125, 165);
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+}
+
+#details {
+	margin: 0 20px;
+}
+
+#recipe {
+	margin: 0 20px;
+}
+
+#identifiers p {
+	margin: 15px 0;
+}
+
+#identifiers p :first-child {
+	font-weight: 700;
+}
+
+#ingredients {
+	margin-top: 30px;
+}
+
+#ingredients p {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+
+#ingred-list li {
+	list-style: none;
+	margin: 5px 0;
+}
+
+img {
+	width: 360px;
+	height: 360px;
+	object-fit: cover;
+}
