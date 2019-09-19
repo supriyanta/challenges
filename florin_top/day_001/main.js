@@ -23,8 +23,37 @@ function makeIngredientItem(itemName, measure) {
 	ingredients.appendChild(item);
 }
 
+function addVideoIFrame(name, videoLink) {
+	let player = document.querySelector("#player");
+	player.innerHTML = "";
+
+	let h2Name = document.createElement("h2");
+	h2Name.textContent = name;
+	h2Name.classList.add("recipe-name");
+
+	player.appendChild(h2Name);
+
+	let videoWrapper = document.createElement("div");
+	videoWrapper.classList.add("video-wrapper");
+
+	let IFrame = document.createElement("iframe");
+	IFrame.setAttribute("width", "420");
+	IFrame.setAttribute("height", "315");
+	IFrame.setAttribute(
+		"src",
+		`https://www.youtube.com/embed/${videoLink.slice(-11)}`
+	);
+	IFrame.setAttribute("frameborder", "0");
+	IFrame.setAttribute("allow", "autoplay; encrypted-media");
+	IFrame.setAttribute("allowfullscreen", true);
+
+	videoWrapper.appendChild(IFrame);
+	player.appendChild(videoWrapper);
+}
+
 function paintUi(meal) {
-	document.querySelector("#recipe-name").textContent = meal.strMeal;
+	document.querySelector(".main").style.visibility = "visible";
+	document.querySelector(".recipe-name").textContent = meal.strMeal;
 	document.querySelector("#recipe-desc").textContent = meal.strInstructions;
 	document.querySelector("img").src = meal.strMealThumb;
 	document.querySelector("#category").textContent = meal.strCategory;
@@ -41,4 +70,7 @@ function paintUi(meal) {
 		makeIngredientItem(meal[attr], meal[measure]);
 		++i;
 	}
+
+	// Adding video
+	addVideoIFrame(meal.strMeal, meal.strYoutube);
 }
