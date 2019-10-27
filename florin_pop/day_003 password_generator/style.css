@@ -21,15 +21,48 @@ button {
 }
 
 input[type="checkbox"] {
+	position: relative;
 	margin-right: 0;
+	height: 16px;
+	width: 32px;
+	border-radius: 8px;
+	-webkit-appearance: none;
+	background: #c6c6c6;
+	outline: none;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5s;
+}
+
+input:checked[type="checkbox"] {
+	background: #03a9f4;
+}
+
+input[type="checkbox"]::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background: white;
+	transform: scale(1.1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5s;
+}
+
+input:checked[type="checkbox"]::before {
+	left: 16px;
 }
 
 .container {
+	position: relative;
 	background: rgb(28, 11, 126);
 	width: 350px;
 	padding: 16px;
+	margin: 0 auto;
 	max-width: 90%;
-	margin: 30vh auto;
+	top: 30vh;
 }
 
 .container h2 {
@@ -87,6 +120,9 @@ input[type="checkbox"] {
 	color: #fff;
 	border: 0;
 	border-radius: 28px;
+	font-weight: 600;
+	text-transform: uppercase;
+	word-spacing: 6px;
 }
 
 #generate-btn:hover {
@@ -95,4 +131,10 @@ input[type="checkbox"] {
 
 #copy-btn:hover {
 	background: rgb(6, 6, 168);
+}
+
+@media only screen and (max-width: 700px) {
+	.container {
+		top: 10vh;
+	}
 }
